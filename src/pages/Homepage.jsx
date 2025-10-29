@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import SkillCard from '../components/SkillCard.jsx'
+import { GlowCapture, Glow } from '@codaworks/react-glow'
 
 const Homepage = () => {
     const [skills, setSkills] = useState()
@@ -27,18 +27,11 @@ const Homepage = () => {
 
     return (
         <>
-            {/* <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-            </div> */}
             <div className="container">
 
                 <section id='jumbo'>
-                    <h1>Hi. I'm Haojie.
+
+                    <h1>Hi. I'm Haojie Zhang.
                         <br />
                         A Web Developer.
                     </h1>
@@ -48,28 +41,39 @@ const Homepage = () => {
 
                 <section id='about' className='anchor'>
                     <h2>About</h2>
-                    <p>
-                        I’m a 23-year-old full-stack web developer based in Milan with a strong passion for technology, problem-solving, and continuous learning. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
-                        <br />
-                        <br />
-                        Fluent in Italian, Chinese, and English—with some knowledge of Spanish and Japanese—I love experimenting in my homelab, where I explore Docker, Kubernetes, virtualization, networking, and server management. My daily driver is Arch Linux, but I also enjoy working across Windows, Ubuntu, and macOS environments.
-                        <br />
-                        <br />
-                        Curious, self-driven, and passionate about building efficient and innovative systems, I’m focused on growing as a web developer and contributing to impactful and forward-thinking tech projects.
-                    </p>
+                    <GlowCapture>
+                        <Glow>
+                            <p>
+                                I’m a 23-year-old web developer based in Milan with a strong passion for <span className='glowable-text bold-text'>technology, problem-solving</span>, and <span className='glowable-text bold-text'>continuous learning</span>. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
+                                <br />
+                                <br />
+                                Fluent in <span className='glowable-text bold-text'>Italian, Chinese, and English</span>—with some knowledge of Spanish and Japanese—I love experimenting in my homelab, where I explore <span className='glowable-text bold-text'>Docker, Kubernetes, virtualization, networking, and server management</span>. My daily driver is Arch Linux, but I also enjoy working across Windows, Ubuntu, and macOS environments.
+                                <br />
+                                <br />
+                                <span className='glowable-text bold-text'>Curious, self-driven, and passionate</span> about building <span className='glowable-text bold-text'>efficient and innovative systems</span>, I’m focused on growing as a web developer and contributing to impactful and forward-thinking tech projects.
+                            </p>
+                        </Glow>
+                    </GlowCapture>
                 </section>
 
                 <hr />
 
                 <section id='skills' className='anchor'>
                     <h2>My Skills</h2>
-                    <div className="row">
-                        {skills && skills.map((skill, index) => (
-                            <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
-                                <SkillCard name={skill.name} logo={skill.logo} />
-                            </div>
-                        ))}
-                    </div>
+                    <GlowCapture>
+                        <div className="row">
+                            {skills && skills.map((skill, index) => (
+                                <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+                                    <Glow>
+                                        <div className="skill-card">
+                                            <img src={skill.logo} alt={skill.name} />
+                                            <h3>{skill.name}</h3>
+                                        </div>
+                                    </Glow>
+                                </div>
+                            ))}
+                        </div>
+                    </GlowCapture>
                 </section>
 
                 <hr />
