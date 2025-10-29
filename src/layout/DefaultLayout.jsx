@@ -10,9 +10,7 @@ const DefaultLayout = () => {
                 <header>
                     <Header />
                 </header>
-                <main>
-                    <Outlet />
-                </main>
+                <Outlet />
                 <footer>
                     <Footer />
                 </footer>
