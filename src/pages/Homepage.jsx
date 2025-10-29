@@ -27,21 +27,27 @@ const Homepage = () => {
 
     return (
         <>
-            <div className="background-1">
-                <div className="container">
+            <GlowCapture>
+                <Glow>
+                    <div className="background-1">
+                        <div className="container">
 
-                    <section id='jumbo'>
+                            <section id='jumbo'>
+                                <h1>
+                                    Hi. I'm <span className='big-title'>Haojie Zhang</span>.
+                                    <br />
+                                    <span className='grey-text'>
+                                        A <span className='glowable-text'>Web Developer</span>.
+                                    </span>
+                                </h1>
 
-                        <h1>Hi. I'm <span className='big-title'>Haojie Zhang</span>.
-                            <br />
-                            A Web Developer.
-                        </h1>
+                                <p>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
+                            </section>
 
-                        <p>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
-                    </section>
-
-                </div>
-            </div>
+                        </div>
+                    </div>
+                </Glow>
+            </GlowCapture>
             <div className="background-2">
                 <div className="container anchor" id='about'>
 
@@ -49,23 +55,23 @@ const Homepage = () => {
                         <h2>About</h2>
                         <GlowCapture>
                             <Glow>
-                                <p>
-                                    I’m a 23-year-old web developer based in Milan with a strong passion for <span className='glowable-text bold-text'>technology, problem-solving</span>, and <span className='glowable-text bold-text'>continuous learning</span>. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
+                                <p className='paragraph'>
+                                    I’m a 23-year-old web developer based in Milan with a strong passion for <span className='glowable-about'>technology, problem-solving</span>, and <span className='glowable-about'>continuous learning</span>. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
                                     <br />
                                     <br />
-                                    Fluent in <span className='glowable-text bold-text'>Italian, Chinese, and English</span>—with some knowledge of Spanish and Japanese—I love experimenting in my homelab, where I explore <span className='glowable-text bold-text'>Docker, Kubernetes, virtualization, networking, and server management</span>. My daily driver is Arch Linux, but I also enjoy working across Windows, Ubuntu, and macOS environments.
+                                    Fluent in <span className='glowable-about'>Italian, Chinese, and English</span>—with some knowledge of Spanish and Japanese—I love experimenting in my homelab, where I explore <span className='glowable-about'>Docker, Kubernetes, virtualization, networking, and server management</span>. My daily driver is Arch Linux, but I also enjoy working across Windows, Ubuntu, and macOS environments.
                                     <br />
                                     <br />
-                                    <span className='glowable-text bold-text'>Curious, self-driven, and passionate</span> about building <span className='glowable-text bold-text'>efficient and innovative systems</span>, I’m focused on growing as a web developer and contributing to impactful and forward-thinking tech projects.
+                                    <span className='glowable-about'>Curious, self-driven, and passionate</span> about building <span className='glowable-about'>efficient and innovative systems</span>, I’m focused on growing as a web developer and contributing to impactful and forward-thinking tech projects.
                                 </p>
                             </Glow>
                         </GlowCapture>
-                    </section>
 
-                    <section>
+                        <div className="spacer"></div>
+
                         <h2>My Skills</h2>
                         <GlowCapture>
-                            <div className="row">
+                            <div className="row" id='skills'>
                                 {skills && skills.map((skill, index) => (
                                     <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
                                         <Glow>
@@ -87,7 +93,7 @@ const Homepage = () => {
 
                     <section>
                         <h2>Projects</h2>
-                        <p>
+                        <p className='paragraph'>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat voluptate temporibus velit nostrum a libero commodi! Nobis sunt aspernatur magni neque dolor incidunt iusto, nostrum in quidem quos et eaque praesentium voluptates laboriosam quis ad commodi reiciendis reprehenderit minima tenetur asperiores tempora aliquam dicta? Ratione quae repellendus alias voluptatibus quibusdam fugit autem nisi amet cupiditate exercitationem. Eveniet, ipsa aspernatur suscipit est ut enim sed! Harum maxime, nulla eaque iusto odit autem quasi tenetur possimus quia laudantium earum deserunt cum distinctio sed voluptatibus rem. Cumque quisquam ipsa repellat eos illo omnis vitae nemo, exercitationem corporis inventore earum quas, at quam, aperiam veniam vero ut nihil quibusdam praesentium ipsam. Soluta veritatis corporis voluptate, accusantium dolorem repellendus aliquam explicabo commodi debitis voluptatem perspiciatis illum beatae autem vitae quaerat quas repudiandae eligendi obcaecati assumenda deserunt corrupti totam ipsam? Vel officiis, eum fugit consectetur asperiores cum nesciunt numquam deserunt reprehenderit aut eaque dicta unde rem hic, nam, minima delectus provident consequatur magni iure impedit. Qui ipsa sed amet expedita aliquam odio autem tenetur sint! Neque facilis harum soluta asperiores earum et, iure enim magni laboriosam magnam commodi, quam veritatis. Id nemo sit odio asperiores est nam excepturi nobis praesentium ex consequatur, aliquid cupiditate eligendi, distinctio tempora sed. Dolorem explicabo aliquam dicta, necessitatibus tempore a nulla aut illum porro voluptates nobis alias soluta accusamus et laborum blanditiis ab quam temporibus fugit adipisci similique aperiam. Illum consequatur beatae possimus molestias blanditiis dolor veniam, nulla assumenda qui dignissimos ipsa? Consequatur sint suscipit dignissimos obcaecati adipisci natus praesentium totam nesciunt consectetur aperiam debitis itaque tempora a, sed nihil ea maxime, impedit quaerat pariatur recusandae, veniam earum vitae. Architecto quia vel fugiat ea eius perferendis ex totam quos, et eaque! Sit neque totam ducimus ipsum, accusantium explicabo ut nobis tempora eos pariatur aspernatur consequuntur atque, cupiditate tempore deleniti temporibus deserunt adipisci perspiciatis? Iure, voluptatum modi doloremque amet accusantium illo rem quos, assumenda repudiandae vero pariatur ea vitae sit quod aperiam cumque dignissimos a necessitatibus deserunt hic in aliquid. Exercitationem quaerat, incidunt non libero, dolorum quos consequatur rerum architecto ad vero nemo quidem possimus dignissimos! Error, magni. Reprehenderit, similique alias! Perferendis nemo laborum dolorem quidem explicabo architecto non? Laboriosam alias, dignissimos eos deleniti atque fuga. Nostrum eveniet sit iure. Veritatis repellat, quisquam ipsa ut voluptate est quod officia repudiandae adipisci! Doloribus obcaecati facilis rerum mollitia eaque reprehenderit ea vero, voluptas quas sunt debitis iusto laboriosam accusantium eligendi nam vel ullam explicabo?
                         </p>
                     </section>
@@ -99,7 +105,7 @@ const Homepage = () => {
 
                     <section>
                         <h2>Experience</h2>
-                        <p>
+                        <p className='paragraph'>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi labore perferendis tenetur quidem nesciunt ipsum non, perspiciatis a debitis. Nesciunt nisi qui dolore corrupti ab voluptates reiciendis deserunt blanditiis rerum consectetur sunt ducimus, aliquam delectus culpa accusantium nemo eaque porro dolor! Suscipit inventore obcaecati commodi nihil impedit iure voluptatem odit consequatur labore iusto soluta saepe nemo cupiditate dicta, eaque facere qui modi magni atque ratione delectus quia architecto! Eius non dolorum possimus autem quaerat natus ab perferendis deserunt dolores vero quasi praesentium esse soluta tempora porro, eligendi assumenda. Eligendi quae ad atque adipisci quidem ea quisquam maxime accusamus amet aliquid nihil asperiores aspernatur fugiat eum reprehenderit, tempore eaque, necessitatibus dolor quod omnis molestiae non? Aut, incidunt? Veniam sapiente iste fugiat est vel maxime perferendis eum velit repellendus ipsam provident ullam unde sint dolores qui ut, delectus cum? Odit, adipisci. Iusto reiciendis possimus ex libero quas modi rem praesentium nostrum dolores eaque harum similique, cupiditate id deleniti consequatur minus ipsam sint tempora veniam ipsum nobis iste asperiores, nisi quam. Deserunt necessitatibus asperiores nam sint, repudiandae iure enim minima error minus, sapiente unde reiciendis animi doloremque laborum nesciunt saepe alias aperiam nemo inventore illum dolor. Ipsam accusamus cum recusandae veniam! Atque totam accusantium eum, nesciunt nam laborum debitis repudiandae exercitationem vel! Sunt porro beatae sit vitae. Magnam accusamus, provident aperiam optio pariatur voluptatem culpa debitis tempora vitae impedit recusandae dolorem sunt numquam cumque obcaecati eos hic dolorum sit similique est nemo eius adipisci veritatis! Tenetur cum commodi eius suscipit alias, non aliquid aperiam ipsa! Laborum molestias hic, non unde labore facilis natus dignissimos? Itaque fugit minima laudantium, cumque quae veritatis veniam sapiente aspernatur iusto maiores dolorem pariatur, recusandae vitae a illo perferendis architecto sit fuga dignissimos beatae sequi dolores ad aperiam. Debitis animi temporibus voluptate neque voluptates optio, quos, aperiam reiciendis, totam eligendi asperiores ea autem cumque nobis beatae repudiandae laboriosam sit molestiae libero officia incidunt delectus earum quaerat nihil! Reprehenderit sequi culpa voluptate alias, accusantium est repellendus deleniti dolor, commodi doloremque recusandae excepturi corporis sunt nemo numquam neque cupiditate deserunt. Accusantium esse maiores aliquam illo tempore debitis consequatur praesentium, temporibus id minima modi placeat doloribus hic autem aut sint iste magnam quae quia sed adipisci officia. Porro nam est similique, vel in nesciunt doloribus magni quos molestias quia, ipsa dolorem consectetur velit asperiores quam expedita cum dolor corporis officia neque? Aperiam rem iusto mollitia ipsa qui labore consequatur nemo culpa reprehenderit.
                         </p>
                     </section>
@@ -110,8 +116,8 @@ const Homepage = () => {
                 <div className="container anchor" id='contacts'>
 
                     <section>
-                        <h2>Contact</h2>
-                        <p>
+                        <h2>Contacts</h2>
+                        <p className='paragraph'>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi labore perferendis tenetur quidem nesciunt ipsum non, perspiciatis a debitis. Nesciunt nisi qui dolore corrupti ab voluptates reiciendis deserunt blanditiis rerum consectetur sunt ducimus, aliquam delectus culpa accusantium nemo eaque porro dolor! Suscipit inventore obcaecati commodi nihil impedit iure voluptatem odit consequatur labore iusto soluta saepe nemo cupiditate dicta, eaque facere qui modi magni atque ratione delectus quia architecto! Eius non dolorum possimus autem quaerat natus ab perferendis deserunt dolores vero quasi praesentium esse soluta tempora porro, eligendi assumenda. Eligendi quae ad atque adipisci quidem ea quisquam maxime accusamus amet aliquid nihil asperiores aspernatur fugiat eum reprehenderit, tempore eaque, necessitatibus dolor quod omnis molestiae non? Aut, incidunt? Veniam sapiente iste fugiat est vel maxime perferendis eum velit repellendus ipsam provident ullam unde sint dolores qui ut, delectus cum? Odit, adipisci. Iusto reiciendis possimus ex libero quas modi rem praesentium nostrum dolores eaque harum similique, cupiditate id deleniti consequatur minus ipsam sint tempora veniam ipsum nobis iste asperiores, nisi quam. Deserunt necessitatibus asperiores nam sint, repudiandae iure enim minima error minus, sapiente unde reiciendis animi doloremque laborum nesciunt saepe alias aperiam nemo inventore illum dolor. Ipsam accusamus cum recusandae veniam! Atque totam accusantium eum, nesciunt nam laborum debitis repudiandae exercitationem vel! Sunt porro beatae sit vitae. Magnam accusamus, provident aperiam optio pariatur voluptatem culpa debitis tempora vitae impedit recusandae dolorem sunt numquam cumque obcaecati eos hic dolorum sit similique est nemo eius adipisci veritatis! Tenetur cum commodi eius suscipit alias, non aliquid aperiam ipsa! Laborum molestias hic, non unde labore facilis natus dignissimos? Itaque fugit minima laudantium, cumque quae veritatis veniam sapiente aspernatur iusto maiores dolorem pariatur, recusandae vitae a illo perferendis architecto sit fuga dignissimos beatae sequi dolores ad aperiam. Debitis animi temporibus voluptate neque voluptates optio, quos, aperiam reiciendis, totam eligendi asperiores ea autem cumque nobis beatae repudiandae laboriosam sit molestiae libero officia incidunt delectus earum quaerat nihil! Reprehenderit sequi culpa voluptate alias, accusantium est repellendus deleniti dolor, commodi doloremque recusandae excepturi corporis sunt nemo numquam neque cupiditate deserunt. Accusantium esse maiores aliquam illo tempore debitis consequatur praesentium, temporibus id minima modi placeat doloribus hic autem aut sint iste magnam quae quia sed adipisci officia. Porro nam est similique, vel in nesciunt doloribus magni quos molestias quia, ipsa dolorem consectetur velit asperiores quam expedita cum dolor corporis officia neque? Aperiam rem iusto mollitia ipsa qui labore consequatur nemo culpa reprehenderit.
                         </p>
                     </section>
