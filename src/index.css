@@ -143,6 +143,10 @@ a {
 }
 
 .grey-text {
+    color: var(--text-muted);
+}
+
+.opacity-60 {
     opacity: 0.6;
 }
 

@@ -61,12 +61,12 @@ const Homepage = () => {
                                 <h1>
                                     Hi. I'm <span className='big-title'>Haojie Zhang</span>.
                                     <br />
-                                    <span className='grey-text'>
+                                    <span className='opacity-60'>
                                         <span className='pre-text-change'>A </span><span className='glowable-text'><TextChange textArray={roles} /></span>
                                     </span>
                                 </h1>
 
-                                <p>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
+                                <p className='grey-text'>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
                             </Glow>
                             <div className='bg-mask glow-mask'></div>
 
