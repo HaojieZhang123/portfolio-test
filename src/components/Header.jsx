@@ -1,7 +1,22 @@
 import { useState, useEffect } from 'react';
 
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+function useThemeToggle() {
+    const [isLight, setIsLight] = useState(false);
+
+    useEffect(() => {
+        document.body.classList.toggle('light', isLight);
+    }, [isLight]);
+
+    const toggleTheme = () => setIsLight((v) => !v);
+    return [isLight, toggleTheme];
+}
+
 const Header = () => {
     const [active, setActive] = useState('about');
+    const [isLight, toggleTheme] = useThemeToggle();
 
     useEffect(() => {
         // Select all anchor containers (these wrap each section).
@@ -30,7 +45,10 @@ const Header = () => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-2 d-flex align-items-center">
+                        <h3>Haojie</h3>
+                    </div>
+                    <div className="col-8">
                         <ul>
                             <li className="mx-3">
                                 <a href="#about" className={active === 'about' ? 'active' : ''}>
@@ -53,6 +71,16 @@ const Header = () => {
                                 </a>
                             </li>
                         </ul>
+                    </div>
+                    <div className="col-2 d-flex align-items-center justify-content-end">
+                        <button
+                            className="theme-toggle-btn"
+                            onClick={toggleTheme}
+                            aria-label="Toggle theme"
+                            title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+                        >
+                            {isLight ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
+                        </button>
                     </div>
                 </div>
             </div >

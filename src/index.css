@@ -249,6 +249,20 @@ header li a:hover {
     transition: all 0.2s ease-in-out;
 }
 
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.7em;
+    cursor: pointer;
+    color: var(--primary);
+    padding: 0 8px;
+    transition: color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--warning);
+}
+
 /* jumbo */
 .bg-mask {
     width: 100%;
@@ -300,7 +314,7 @@ header li a:hover {
 #jumbo h1 {
     /* font-size: 50px; */
     margin-bottom: 20px;
-    line-height: 1.3;
+    line-height: 1.7;
 }
 
 #jumbo .big-title {
@@ -310,20 +324,31 @@ header li a:hover {
 }
 
 /* text change animation */
+.pre-text-change {
+    position: relative;
+    top: -10px;
+}
+
 .roles-container {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    height: 1.05em;
+    /* increase height to accommodate descenders (g, p, j) and avoid clipping */
+    height: 1.3em;
+    line-height: 1.3em;
+    /* ensure child lines use same line-height */
 }
 
 .role-text {
     display: block;
-    height: 1em;
+    /* make each item match container height so translateY(100%) equals one line */
     height: 100%;
+    line-height: 1.3em;
     color: var(--primary);
     /* 1.5 second for each text */
     animation: slideUp 15s infinite;
+    /* smoother rendering while animating */
+    will-change: transform;
 }
 
 /* double animation for each text for smooth transition */
@@ -411,7 +436,6 @@ header li a:hover {
 }
 
 .social-button {
-    /* color: var(--text); */
     background-color: transparent;
     border: none;
     font-size: 25px;
@@ -504,7 +528,7 @@ header li a:hover {
 
 [glow] .glowable-about {
     color: var(--primary);
-    text-shadow: 0px 0px 10px var(--text);
+    text-shadow: 0px 0px 10px #F0C06C;
 }
 
 /* copy button animations & styles */
