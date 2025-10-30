@@ -2,8 +2,31 @@ import { useState, useEffect } from 'react'
 
 import { GlowCapture, Glow } from '@codaworks/react-glow'
 
+import TextChange from '../components/TextChange'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import CopyButton from '../components/CopyButton'
+
 const Homepage = () => {
-    const [skills, setSkills] = useState()
+    const [skills, setSkills] = useState();
+    const [roles, setRoles] = useState([
+        'Web Developer',
+        'Linux Enthusiast',
+        'Self Hosting Advocate',
+        'Problem Solver',
+        'Hardware Enthusiast',
+        'Tech Tinkerer',
+        'Open Source Advocate',
+        'Lifelong Learner',
+        'Curious Explorer',
+        'Web Developer'
+    ]);
+
+    const birthDate = new Date('2002-06-07T00:00:00Z')
+    const today = new Date()
+    const age = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24 * 365))
 
     const setSkillsData = () => {
         setSkills([
@@ -28,26 +51,46 @@ const Homepage = () => {
     return (
         <>
             <GlowCapture>
-                <Glow>
-                    <div className="background-1">
-                        <div className="container">
+                <div className="background-1">
+                    <div className="container">
 
-                            <section id='jumbo'>
+                        <section id='jumbo'>
+                            <Glow>
                                 <h1>
                                     Hi. I'm <span className='big-title'>Haojie Zhang</span>.
                                     <br />
                                     <span className='grey-text'>
-                                        A <span className='glowable-text'>Web Developer</span>.
+                                        A <span className='glowable-text'><TextChange textArray={roles} /></span>
                                     </span>
                                 </h1>
 
                                 <p>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
-                            </section>
 
-                        </div>
+                                <div className='bg-mask glow-mask'></div>
+                            </Glow>
+
+                            <div className='social-container'>
+                                {/* social buttons */}
+                                <a href='https://github.com/HaojieZhang123' target='_blank' className='social-button'>
+                                    <FontAwesomeIcon icon={faGithub} />
+                                </a>
+
+                                <a href='https://www.linkedin.com/in/haojie-zhang-534757311/' target='_blank' className='social-button'>
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </a>
+
+                                {/* copy email and phone to clipboard with feedback */}
+                                <CopyButton value={"haojiezhang123@gmail.com"} icon={faEnvelope} ariaLabel="Copy email" />
+
+                                <CopyButton value={"3462378123"} icon={faWhatsapp} ariaLabel="Copy phone" />
+
+                            </div>
+
+                        </section>
+
                     </div>
-                </Glow>
-            </GlowCapture>
+                </div>
+            </GlowCapture >
             <div className="background-2">
                 <div className="container anchor" id='about'>
 
@@ -56,7 +99,7 @@ const Homepage = () => {
                         <GlowCapture>
                             <Glow>
                                 <p className='paragraph'>
-                                    I’m a 23-year-old web developer based in Milan with a strong passion for <span className='glowable-about'>technology, problem-solving</span>, and <span className='glowable-about'>continuous learning</span>. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
+                                    I’m a {age}-year-old web developer based in <span className='glowable-about'>Milan, Italy</span> with a strong passion for <span className='glowable-about'>technology, problem-solving</span>, and <span className='glowable-about'>continuous learning</span>. I studied Computer Science Engineering at Politecnico di Milano and recently completed an intensive six-month full-stack web development bootcamp, where I honed my skills in front-end and back-end web development.
                                     <br />
                                     <br />
                                     Fluent in <span className='glowable-about'>Italian, Chinese, and English</span>—with some knowledge of Spanish and Japanese—I love experimenting in my homelab, where I explore <span className='glowable-about'>Docker, Kubernetes, virtualization, networking, and server management</span>. My daily driver is Arch Linux, but I also enjoy working across Windows, Ubuntu, and macOS environments.
@@ -73,11 +116,11 @@ const Homepage = () => {
                         <GlowCapture>
                             <div className="row" id='skills'>
                                 {skills && skills.map((skill, index) => (
-                                    <div className="col-6 col-md-4 col-lg-3 mb-4" key={index}>
+                                    <div className="col-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center align-items-center" key={index}>
                                         <Glow>
                                             <div className="skill-card">
                                                 <img src={skill.logo} alt={skill.name} />
-                                                <h3>{skill.name}</h3>
+                                                <h4>{skill.name}</h4>
                                             </div>
                                         </Glow>
                                     </div>
