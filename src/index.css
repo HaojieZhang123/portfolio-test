@@ -137,7 +137,7 @@ h1 {
     letter-spacing: -2%;
 }
 
-a {
+body a {
     text-decoration: none !important;
     color: inherit !important;
 }
