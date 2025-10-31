@@ -410,7 +410,7 @@ header li a:hover {
     }
 
     .pre-text-change {
-        top: -0.5rem;
+        top: -0.6rem;
     }
 
     #jumbo span.jumbo-subtitle * {
@@ -679,7 +679,7 @@ header li a:hover {
 }
 
 .social-button.copied {
-    background-color: rgba(47, 143, 74, 0.9);
+    /* background-color: rgba(47, 143, 74, 0.9); */
     /* green */
     border-color: rgba(255, 255, 255, 0.06);
     color: #fff;
