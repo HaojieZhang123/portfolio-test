@@ -247,6 +247,12 @@ section h2 {
     padding-left: 2.5rem;
 }
 
+@media (max-width: 768px) {
+    section {
+        padding: 2.5rem 0;
+    }
+}
+
 /* header */
 
 header {
@@ -611,7 +617,13 @@ header li a:hover {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    margin: 10px 0px;
+    margin: 10px auto;
+    text-align: center;
+
+    /* width */
+    min-width: 200px;
+    max-width: 300px;
+    width: 100%;
 }
 
 /* glow */
@@ -621,6 +633,11 @@ header li a:hover {
 }
 
 [glow] .skill-card {
+    border: 1px solid #F0C06C;
+    color: var(--primary);
+}
+
+[glow] .contact-box {
     border: 1px solid #F0C06C;
     color: var(--primary);
 }

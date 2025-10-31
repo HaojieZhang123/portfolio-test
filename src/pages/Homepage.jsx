@@ -114,7 +114,7 @@ const Homepage = () => {
 
                         <div className="spacer"></div>
 
-                        <h2>My Skills</h2>
+                        <h2 className='text-center'>My Skills</h2>
                         <GlowCapture>
                             <div className="row" id='skills'>
                                 {skills && skills.map((skill, index) => (
@@ -137,7 +137,7 @@ const Homepage = () => {
                 <div className="container anchor" id='projects'>
 
                     <section>
-                        <h2>Projects</h2>
+                        <h2 className='text-center'>Portfolio</h2>
                         <div className="row d-flex justify-content-center">
                             <div className="col-12 col-md-6 col-lg-4">
                                 <p className="paragraph">
@@ -173,7 +173,7 @@ const Homepage = () => {
                 <div className="container anchor" id='contacts'>
 
                     <section>
-                        <h2>Contact Me</h2>
+                        <h2 className='text-center'>Contact Me</h2>
                         <div className="row d-flex justify-content-center flex-wrap">
                             <div className="col-12 d-flex justify-content-center align-items-center flex-wrap mb-3">
                                 <GlowCapture className='d-flex justify-content-around align-items-center flex-wrap w-100'>
