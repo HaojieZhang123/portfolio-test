@@ -99,42 +99,78 @@ body.light {
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
     /* font-size: 16px; */
 
     background-color: var(--bg);
     color: var(--text);
 }
 
+@media (max-width: 768px) {
+    * {
+        font-size: 14px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* major third */
 h6 {
-    font-size: 20px;
+    font-size: 1.2rem;
     letter-spacing: -0.5%;
 }
 
 h5 {
-    font-size: 25px;
+    font-size: 1.44rem;
     letter-spacing: -0.75%;
 }
 
 h4 {
-    font-size: 31.25px;
+    font-size: 1.728rem;
     letter-spacing: -1%;
 }
 
 h3 {
-    font-size: 39px;
+    font-size: 2.074rem;
     letter-spacing: -1.5%;
 }
 
 h2 {
-    font-size: 48.75px;
+    font-size: 2.488rem;
     letter-spacing: -1.75%;
 }
 
 h1 {
-    font-size: 61px;
+    font-size: 2.986rem;
     letter-spacing: -2%;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.424rem;
+    }
+
+    h5 {
+        font-size: 1.266rem;
+    }
+
+    h6 {
+        font-size: 1.125rem;
+    }
 }
 
 body a {
@@ -157,12 +193,23 @@ body a {
     height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+}
+
 .container.anchor {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 5rem;
 }
 
 .spacer {
-    height: 60px;
+    height: 3.75rem;
 }
 
 .background-1,
@@ -182,7 +229,7 @@ body a {
 
 /* sections */
 section {
-    padding: 60px 0px;
+    padding: 3.75rem 0;
 }
 
 section h2 {
@@ -195,9 +242,9 @@ section h2 {
 .paragraph {
     /* font-size: 16px; */
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     border-left: 5px solid var(--primary);
-    padding-left: 40px;
+    padding-left: 2.5rem;
 }
 
 /* header */
@@ -207,8 +254,8 @@ header {
     top: 0;
     z-index: 9999;
 
-    height: 80px;
-    padding: 20px auto;
+    height: 5rem;
+    padding: 1.25rem auto;
 
     /* bottom border shadow */
     /* box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3); */
@@ -219,18 +266,26 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 
 header li {
     list-style: none;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     cursor: pointer;
+    background-color: transparent;
     /* font-size: 20px; */
     color: var(--text-muted);
 }
 
 header li a {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
+}
+
+@media (max-width: 990px) {
+    header li a {
+        padding: 0.625rem 0.8rem;
+    }
 }
 
 header ul li .active {
@@ -238,7 +293,7 @@ header ul li .active {
     transition: all 0.3s ease-in-out;
 
     background-color: var(--bg-light);
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 header li:hover {
@@ -249,7 +304,7 @@ header li:hover {
 
 header li a:hover {
     background-color: var(--bg-light);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
 }
 
@@ -259,12 +314,19 @@ header li a:hover {
     font-size: 1.7em;
     cursor: pointer;
     color: var(--primary);
-    padding: 0 8px;
+    padding: 0 0.5rem;
     transition: color 0.2s;
 }
 
 .theme-toggle-btn:hover {
     color: var(--warning);
+}
+
+@media (max-width: 768px) {
+    header #nav-menu {
+        display: none !important;
+    }
+
 }
 
 /* jumbo */
@@ -301,7 +363,7 @@ header li a:hover {
 
 
 #jumbo {
-    height: 600px;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -315,22 +377,45 @@ header li a:hover {
     background-color: transparent;
 }
 
+#jumbo .jumbo-text {
+    margin-bottom: 1.25rem;
+}
+
 #jumbo h1 {
     /* font-size: 50px; */
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
     line-height: 1.7;
 }
 
 #jumbo .big-title {
     font-weight: 900;
-    font-size: 76px;
+    font-size: 4.5rem;
     color: var(--primary);
 }
 
 /* text change animation */
 .pre-text-change {
     position: relative;
-    top: -10px;
+    top: -0.75rem;
+}
+
+@media (max-width: 768px) {
+
+    #jumbo {
+        height: 25rem;
+    }
+
+    #jumbo .big-title {
+        font-size: 3.5rem;
+    }
+
+    .pre-text-change {
+        top: -0.5rem;
+    }
+
+    #jumbo span.jumbo-subtitle * {
+        font-size: 1.75rem;
+    }
 }
 
 .roles-container {
@@ -466,9 +551,9 @@ header li a:hover {
 .skill-card {
     background-color: var(--gradient);
     border-radius: 8px;
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
-    margin: 25px;
+    margin: 1.6rem;
     border: var(--border-card);
 
     /* shade */
@@ -503,15 +588,30 @@ header li a:hover {
 /* tablet size */
 @media (max-width: 768px) {
     .skill-card {
-        width: 150px;
+        width: 12rem;
         aspect-ratio: 1 / 1;
-        margin: 15px;
-        padding: 15px;
+        margin: 10px;
+        padding: 25px;
     }
 
     .skill-card img {
         max-height: 75px;
     }
+}
+
+/* contacts */
+.contact-box {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    border: var(--border-card);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0px;
 }
 
 /* glow */
@@ -547,6 +647,7 @@ header li a:hover {
     border: 1px solid transparent;
     width: 46px;
     height: 46px;
+    font-size: 25px !important;
 }
 
 .social-button:hover {
@@ -587,6 +688,12 @@ header li a:hover {
 
 .social-button.copied .icon {
     animation: check-pop 260ms cubic-bezier(.2, .8, .2, 1);
+}
+
+@media (max-width: 768px) {
+    .social-button svg {
+        font-size: 20px !important;
+    }
 }
 
 /* stronger visual for active nav link */

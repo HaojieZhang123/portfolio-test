@@ -58,15 +58,16 @@ const Homepage = () => {
 
                         <section id='jumbo'>
                             <Glow>
-                                <h1>
-                                    Hi. I'm <span className='big-title'>Haojie Zhang</span>.
-                                    <br />
-                                    <span className='opacity-60'>
-                                        <span className='pre-text-change'>A </span><span className='glowable-text'><TextChange textArray={roles} /></span>
-                                    </span>
-                                </h1>
-
-                                <p className='grey-text'>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
+                                <div className="jumbo-text">
+                                    <h1>
+                                        Hi. I'm <span className='big-title'>Haojie Zhang</span>.
+                                        <br />
+                                        <span className='jumbo-subtitle opacity-60'>
+                                            <span className='pre-text-change'>A </span><span className='glowable-text'><TextChange textArray={roles} /></span>
+                                        </span>
+                                    </h1>
+                                    <p className='grey-text'>I'm passionate about building innovative web solutions and constantly exploring new technologies.</p>
+                                </div>
                             </Glow>
                             <div className='bg-mask glow-mask'></div>
 
@@ -172,31 +173,56 @@ const Homepage = () => {
                 <div className="container anchor" id='contacts'>
 
                     <section>
-                        <h2>Contacts</h2>
-                        <div className="row d-flex justify-content-center align-items-center">
-                            <div>
-                                <FontAwesomeIcon icon={faEnvelope} />
-                                haojiezhang123@gmail.com
+                        <h2>Contact Me</h2>
+                        <div className="row d-flex justify-content-center flex-wrap">
+                            <div className="col-12 d-flex justify-content-center align-items-center flex-wrap mb-3">
+                                <GlowCapture className='d-flex justify-content-around align-items-center flex-wrap w-100'>
+                                    <Glow className='d-flex col-12 col-md-6 col-lg-4 w-100'>
+                                        <div className='contact-box'>
+                                            <FontAwesomeIcon icon={faEnvelope} />
+                                            <span className='glowable-text'>
+                                                haojiezhang123@gmail.com
+                                            </span>
+                                        </div>
+                                    </Glow>
+
+                                    <Glow className='d-flex col-12 col-md-6 col-lg-4 w-100'>
+                                        <div className='contact-box'>
+                                            <FontAwesomeIcon icon={faPhone} />
+                                            <span className='glowable-text'>
+                                                +39 346 237 8123
+                                            </span>
+                                        </div>
+                                    </Glow>
+
+                                    <Glow className='d-flex col-12 col-md-6 col-lg-4 w-100'>
+                                        <div className='contact-box'>
+                                            <FontAwesomeIcon icon={faLocationDot} />
+                                            <span className='glowable-text'>
+                                                Milan, Italy
+                                            </span>
+                                        </div>
+                                    </Glow>
+                                </GlowCapture>
                             </div>
 
-                            <div>
-                                <FontAwesomeIcon icon={faPhone} />
-                                +39 346 237 8123
-                            </div>
+                            <div className="col-12 d-flex justify-content-center align-items-center">
+                                <div className='social-container'>
+                                    {/* social buttons */}
+                                    <a href='https://github.com/HaojieZhang123' target='_blank' className='social-button'>
+                                        <FontAwesomeIcon icon={faGithub} />
+                                    </a>
 
-                            <div>
-                                <FontAwesomeIcon icon={faLinkedin} />
-                                linkedin.com/in/haojie-zhang-534757311
-                            </div>
+                                    <a href='https://www.linkedin.com/in/haojie-zhang-534757311/' target='_blank' className='social-button'>
+                                        <FontAwesomeIcon icon={faLinkedin} />
+                                    </a>
 
-                            <div>
-                                <FontAwesomeIcon icon={faGithub} />
-                                github.com/HaojieZhang123
-                            </div>
+                                    {/* copy email and phone to clipboard with feedback */}
+                                    <CopyButton value={"haojiezhang123@gmail.com"} icon={faEnvelope} ariaLabel="Copy email" />
 
-                            <div>
-                                <FontAwesomeIcon icon={faLocationDot} />
-                                Milan, Italy
+                                    <CopyButton value={"3462378123"} icon={faWhatsapp} ariaLabel="Copy phone" />
+
+                                </div>
                             </div>
 
                         </div>

@@ -28,7 +28,7 @@ const Header = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     // Use intersectionRatio for more stable behavior across browsers
-                    if (entry.intersectionRatio >= 0.6) {
+                    if (entry.intersectionRatio >= 0.5) {
                         // console.debug('section active:', entry.target.id, 'ratio:', entry.intersectionRatio);
                         setActive(entry.target.id);
                     }
@@ -44,12 +44,12 @@ const Header = () => {
     return (
         <>
             <div className="container">
-                <div className="row">
+                <div className="row d-flex align-items-center justify-content-between">
                     <div className="col-2 d-flex align-items-center">
                         <h3>Haojie</h3>
                     </div>
-                    <div className="col-8">
-                        <ul>
+                    <div id='nav-menu' className="col-8 d-flex align-items-center justify-content-center">
+                        <ul className="d-flex align-items-center justify-content-center">
                             <li className="mx-3">
                                 <a href="#about" className={active === 'about' ? 'active' : ''}>
                                     About
@@ -73,6 +73,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="col-2 d-flex align-items-center justify-content-end">
+                        {/* Theme toggle */}
                         <button
                             className="theme-toggle-btn"
                             onClick={toggleTheme}
@@ -81,6 +82,14 @@ const Header = () => {
                         >
                             {isLight ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
                         </button>
+
+                        {/* menu toggle for tablet and mobile */}
+                        {/* <div className="menu-toggle">
+                            <div className="bar1"></div>
+                            <div className="bar2"></div>
+                            <div className="bar3"></div>
+                        </div> */}
+
                     </div>
                 </div>
             </div >
