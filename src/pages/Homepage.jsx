@@ -34,7 +34,8 @@ const Homepage = () => {
             title: 'Manga Management System',
             description: 'A Spring Boot application with Thymeleaf and Spring Security that provides a RESTful API and admin interface to manage manga, authors, genres, and statuses. It features full CRUD operations, DTO-based data handling, and secure authentication.',
             image: manga,
-            backEnd: 'https://github.com/HaojieZhang123/manga-backend.git'
+            backEnd: 'https://github.com/HaojieZhang123/manga-backend.git',
+            backEndTech: 'Java'
         },
         {
             title: 'Boolean',
@@ -42,7 +43,9 @@ const Homepage = () => {
             image: boolean,
             site: 'https://boolean.haojie.dev/',
             frontEnd: 'https://github.com/HaojieZhang123/project-work-t2-react.git',
-            backEnd: 'https://github.com/HaojieZhang123/project-work-t2-express.git'
+            backEnd: 'https://github.com/HaojieZhang123/project-work-t2-express.git',
+            frontEndTech: 'React',
+            backEndTech: 'Node.js'
         }
     ]);
 
@@ -164,7 +167,7 @@ const Homepage = () => {
                                 <Glow>
                                     {portfolio && portfolio.map((project, index) => (
                                         <div className="col-12" key={index}>
-                                            <PortfolioCard title={project.title} description={project.description} image={project.image} site={project.site || null} frontEnd={project.frontEnd || null} backEnd={project.backEnd || null} />
+                                            <PortfolioCard title={project.title} description={project.description} image={project.image} site={project.site || null} frontEnd={project.frontEnd || null} backEnd={project.backEnd || null} frontEndTech={project.frontEndTech || null} backEndTech={project.backEndTech || null} />
                                         </div>
                                     ))}
                                 </Glow>
