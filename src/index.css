@@ -37,6 +37,8 @@
     --text: oklch(0.96 0.01 50);
     --text-muted: oklch(0.76 0.01 50);
 
+    --invert-svg: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(33deg) brightness(104%) contrast(101%);
+
     /* colors */
     --primary: oklch(0.76 0.1 50);
     --secondary: oklch(0.76 0.1 230);
@@ -81,6 +83,8 @@ body.light {
     */
     --text: oklch(0.15 0.01 50);
     --text-muted: oklch(0.4 0.01 50);
+
+    --invert-svg: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(211deg) brightness(115%) contrast(115%);
 
     /* colors */
     --primary: oklch(0.4 0.1 50);
@@ -546,112 +550,6 @@ header li a:hover {
     z-index: 999;
 }
 
-
-/* skill cards */
-#skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill-card {
-    background-color: var(--gradient);
-    border-radius: 8px;
-    padding: 1.25rem;
-    text-align: center;
-    margin: 1.6rem;
-    border: var(--border-card);
-
-    /* shade */
-    box-shadow: var(--shadow);
-
-    /* aspect ratio squared shape */
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.skill-card img {
-    max-height: 95px;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    margin-bottom: 10px;
-    background-color: transparent;
-}
-
-.skill-card:hover {
-    background-color: var(--bg-light);
-    /* transition: all 0.2s ease-in-out; */
-}
-
-.skill-card h4 {
-    background-color: transparent;
-}
-
-/* tablet size */
-@media (max-width: 768px) {
-    .skill-card {
-        width: 12rem;
-        aspect-ratio: 1 / 1;
-        margin: 10px;
-        padding: 25px;
-    }
-
-    .skill-card img {
-        max-height: 75px;
-    }
-}
-
-/* contacts */
-.contact-box {
-    padding: 10px 20px;
-    border-radius: 8px;
-    background-color: var(--bg);
-    box-shadow: var(--shadow);
-    border: var(--border-card);
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    margin: 10px auto;
-    text-align: center;
-
-    /* width */
-    min-width: 200px;
-    max-width: 300px;
-    width: 100%;
-}
-
-/* glow */
-
-[glow] .glowable-text {
-    color: var(--primary);
-}
-
-[glow] .skill-card {
-    border: 1px solid #F0C06C;
-    color: var(--primary);
-}
-
-[glow] .contact-box {
-    border: 1px solid #F0C06C;
-    color: var(--primary);
-}
-
-.glowable-about {
-    font-weight: bold;
-    color: var(--primary);
-}
-
-[glow] .glowable-about {
-    color: var(--primary);
-    text-shadow: 0px 0px 10px #F0C06C;
-}
-
 /* copy button animations & styles */
 /* tweak social container spacing for the copy buttons */
 .social-container {
@@ -696,8 +594,6 @@ header li a:hover {
 }
 
 .social-button.copied {
-    /* background-color: rgba(47, 143, 74, 0.9); */
-    /* green */
     border-color: rgba(255, 255, 255, 0.06);
     color: #fff;
     transform: scale(1.03);
@@ -711,6 +607,209 @@ header li a:hover {
     .social-button svg {
         font-size: 20px !important;
     }
+}
+
+/* skill cards */
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: var(--gradient);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 1.6rem;
+    border: var(--border-card);
+
+    /* shade */
+    box-shadow: var(--shadow);
+
+    /* aspect ratio squared shape */
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.skill-card img {
+    max-height: 95px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.skill-card img.filter-svg {
+    filter: var(--invert-svg);
+    background-color: transparent;
+}
+
+.skill-card:hover {
+    background-color: var(--bg-light);
+    /* transition: all 0.2s ease-in-out; */
+}
+
+.skill-card h4 {
+    background-color: transparent;
+}
+
+/* tablet size */
+@media (max-width: 768px) {
+    .skill-card {
+        width: 12rem;
+        aspect-ratio: 1 / 1;
+        margin: 10px;
+        padding: 25px;
+    }
+
+    .skill-card img {
+        max-height: 75px;
+    }
+}
+
+/* portfolio */
+.portfolio-card {
+    border-radius: 8px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    border: var(--border-card);
+
+    margin: 1rem 0;
+
+    overflow: hidden;
+}
+
+.portfolio-card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25rem;
+    width: 50%;
+    padding: 20px;
+}
+
+.portfolio-card .card-content p {
+    overflow: scroll;
+}
+
+.portfolio-card .card-content button.button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: var(--border-card);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.portfolio-card .card-content button.portfolio-button {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.portfolio-card .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 25rem;
+    width: 50%;
+}
+
+.portfolio-card .card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: transparent;
+}
+
+.portfolio-card:hover .card-image img {
+    /* zoom in and out */
+    animation: zoom 0.5s ease-in-out;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        filter: blur(2px);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 990px) {
+
+    .portfolio-card .card-content,
+    .portfolio-card .card-image {
+        height: 20rem;
+    }
+}
+
+/* contacts */
+.contact-box {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    border: var(--border-card);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    text-align: center;
+
+    /* width */
+    min-width: 200px;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* glow */
+
+[glow] .glowable-text {
+    color: var(--primary);
+}
+
+[glow] .skill-card,
+[glow] .portfolio-card,
+[glow] .portfolio-card .card-content .button {
+    border: 1px solid #F0C06C;
+    color: var(--primary);
+}
+
+[glow] .contact-box {
+    border: 1px solid #F0C06C;
+    color: var(--primary);
+}
+
+.glowable-about {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+[glow] .glowable-about {
+    color: var(--primary);
+    text-shadow: 0px 0px 10px #F0C06C;
 }
 
 /* stronger visual for active nav link */

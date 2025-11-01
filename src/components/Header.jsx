@@ -28,7 +28,7 @@ const Header = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     // Use intersectionRatio for more stable behavior across browsers
-                    if (entry.intersectionRatio >= 0.5) {
+                    if (entry.intersectionRatio >= 0.7) {
                         // console.debug('section active:', entry.target.id, 'ratio:', entry.intersectionRatio);
                         setActive(entry.target.id);
                     }
@@ -46,7 +46,9 @@ const Header = () => {
             <div className="container">
                 <div className="row d-flex align-items-center justify-content-between">
                     <div className="col-2 d-flex align-items-center">
-                        <h3>Haojie</h3>
+                        <h3>
+                            <a href="#top">Haojie</a>
+                        </h3>
                     </div>
                     <div id='nav-menu' className="col-8 d-flex align-items-center justify-content-center">
                         <ul className="d-flex align-items-center justify-content-center">
@@ -56,8 +58,8 @@ const Header = () => {
                                 </a>
                             </li>
                             <li className="mx-3">
-                                <a href="#projects" className={active === 'projects' ? 'active' : ''}>
-                                    Projects
+                                <a href="#projects" className={active === 'portfolio' ? 'active' : ''}>
+                                    Portfolio
                                 </a>
                             </li>
                             <li className="mx-3">

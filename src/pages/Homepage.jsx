@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react'
-
+// glow
 import { GlowCapture, Glow } from '@codaworks/react-glow'
-
-import TextChange from '../components/TextChange'
-
+// font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import CopyButton from '../components/CopyButton'
+// images
+import manga from '../assets/Manga-backoffice.png'
+import boolean from '../assets/boolean-homepage.png'
 
+// components
+import TextChange from '../components/TextChange'
+import CopyButton from '../components/CopyButton'
+import PortfolioCard from '../components/PortfolioCard'
 import Timeline from '../components/Timeline'
 
 const Homepage = () => {
@@ -25,6 +29,22 @@ const Homepage = () => {
         'Curious Explorer',
         'Web Developer'
     ]);
+    const [portfolio, setPortfolio] = useState([
+        {
+            title: 'Manga Management System',
+            description: 'A Spring Boot application with Thymeleaf and Spring Security that provides a RESTful API and admin interface to manage manga, authors, genres, and statuses. It features full CRUD operations, DTO-based data handling, and secure authentication.',
+            image: manga,
+            backEnd: 'https://github.com/HaojieZhang123/manga-backend.git'
+        },
+        {
+            title: 'Boolean',
+            description: 'A beauty products e-commerce platform built with Node.js (Express), MySQL, and React. Features include advanced product filtering, promo code validation, order confirmation emails, and a responsive React SPA with favorites, shopping cart, and checkout — inspired by Sephora and Douglas.',
+            image: boolean,
+            site: 'https://boolean.haojie.dev/',
+            frontEnd: 'https://github.com/HaojieZhang123/project-work-t2-react.git',
+            backEnd: 'https://github.com/HaojieZhang123/project-work-t2-express.git'
+        }
+    ]);
 
     const birthDate = new Date('2002-06-07T00:00:00Z')
     const today = new Date()
@@ -32,17 +52,18 @@ const Homepage = () => {
 
     const setSkillsData = () => {
         setSkills([
-            { name: 'HTML', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg' },
-            { name: 'CSS', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg' },
-            { name: 'JavaScript', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' },
-            { name: 'React', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg' },
-            { name: 'Node.js', logo: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
-            { name: 'MySQL', logo: 'https://www.svgrepo.com/show/303251/mysql-logo.svg' },
-            { name: 'Java', logo: 'https://upload.wikimedia.org/wikipedia/it/2/2e/Java_Logo.svg' },
-            { name: 'Spring', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg' },
-            { name: 'Git', logo: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg' },
-            { name: 'Arch', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Arch_Linux_%22Crystal%22_icon.svg' },
-            { name: 'Ubuntu', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg' },
+            { name: 'HTML', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg', class: '' },
+            { name: 'CSS', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg', class: '' },
+            { name: 'JavaScript', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png', class: '' },
+            { name: 'React', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg', class: '' },
+            { name: 'Node.js', logo: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg', class: '' },
+            { name: 'Express', logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg', class: 'filter-svg' },
+            { name: 'MySQL', logo: 'https://www.svgrepo.com/show/303251/mysql-logo.svg', class: '' },
+            { name: 'Java', logo: 'https://upload.wikimedia.org/wikipedia/it/2/2e/Java_Logo.svg', class: '' },
+            { name: 'Spring', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg', class: '' },
+            { name: 'Git', logo: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg', class: '' },
+            { name: 'Arch', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Arch_Linux_%22Crystal%22_icon.svg', class: '' },
+            { name: 'Ubuntu', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg', class: '' },
         ])
     }
 
@@ -121,7 +142,7 @@ const Homepage = () => {
                                     <div className="col-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center align-items-center" key={index}>
                                         <Glow>
                                             <div className="skill-card">
-                                                <img src={skill.logo} alt={skill.name} />
+                                                <img src={skill.logo} alt={skill.name} className={skill.class} />
                                                 <h4>{skill.name}</h4>
                                             </div>
                                         </Glow>
@@ -134,26 +155,20 @@ const Homepage = () => {
                 </div >
             </div>
             <div className="background-1">
-                <div className="container anchor" id='projects'>
+                <div className="container anchor" id='portfolio'>
 
                     <section>
                         <h2 className='text-center'>Portfolio</h2>
                         <div className="row d-flex justify-content-center">
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <p className="paragraph">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatibus laudantium sit accusamus quibusdam non, eius laboriosam et optio ipsam enim hic, nulla quam quaerat voluptatum dicta, commodi illum? Alias vel nam accusamus magnam ipsum, est doloribus hic? Eum quos ex consequuntur necessitatibus expedita doloremque quae dolores, esse accusantium voluptatibus.
-                                </p>
-                            </div>
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <p className="paragraph">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatibus laudantium sit accusamus quibusdam non, eius laboriosam et optio ipsam enim hic, nulla quam quaerat voluptatum dicta, commodi illum? Alias vel nam accusamus magnam ipsum, est doloribus hic? Eum quos ex consequuntur necessitatibus expedita doloremque quae dolores, esse accusantium voluptatibus.
-                                </p>
-                            </div>
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <p className="paragraph">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatibus laudantium sit accusamus quibusdam non, eius laboriosam et optio ipsam enim hic, nulla quam quaerat voluptatum dicta, commodi illum? Alias vel nam accusamus magnam ipsum, est doloribus hic? Eum quos ex consequuntur necessitatibus expedita doloremque quae dolores, esse accusantium voluptatibus.
-                                </p>
-                            </div>
+                            <GlowCapture>
+                                <Glow>
+                                    {portfolio && portfolio.map((project, index) => (
+                                        <div className="col-12" key={index}>
+                                            <PortfolioCard title={project.title} description={project.description} image={project.image} site={project.site || null} frontEnd={project.frontEnd || null} backEnd={project.backEnd || null} />
+                                        </div>
+                                    ))}
+                                </Glow>
+                            </GlowCapture>
                         </div>
                     </section>
 
